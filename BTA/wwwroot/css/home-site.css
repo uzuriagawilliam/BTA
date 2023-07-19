@@ -1,0 +1,351 @@
+﻿.bg-ligth-green {
+    background-color: #6D929B;
+}
+
+.bg-ligth-blue {
+    background-color: #C1DAD6;
+}
+
+.form-add-book {
+    margin-top: 18px;
+}
+
+.form-add-new-book {
+    margin: 20px;
+}
+
+.submit-btn {
+    margin-top: 40px;    
+}
+
+input {
+    width: 100%;
+    border-radius: 10px;
+    height: 30px;
+    border-color: #6D929B;
+    font-size: 20px;
+    box-shadow: inset;
+}
+
+textarea {
+    width: 100%;
+    border-radius: 10px;
+    height: 30px;
+    border-color: #6D929B;
+    box-shadow: inset;
+    font-size: 20px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.main-text-intro {
+    display: grid;
+    justify-items: center;
+    width: 100%;
+    color: #6D929B;
+    font-size: 1.1rem;
+    grid-template-columns: auto auto;
+    grid-template-rows: 60px 180px;
+    grid-template-areas:
+        "title title"
+        "text  image";
+}
+
+.main-text-intro-title {
+    background-color: #B7AFA3;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    height: auto;
+    padding: 8px;
+    font-size: 1.6rem;
+    /*margin-bottom: 10px;*/
+    grid-area: title;
+}
+
+.main-text-intro-paragraf {
+    grid-area: text;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    padding-top: 1.2rem;
+}
+.main-text-intro-image {
+    width: 80%;
+    max-width: 390px;
+    grid-area: image;
+    padding-top: 1.3rem;
+}
+
+/*Add book form start*/
+fieldset {
+    border: solid 1px;
+    border-color: #C1DAD6;
+    border-radius: 6px;
+    /*min-width: 200px;*/
+    width: 100%;
+    margin: auto;
+}
+
+legend {
+    font-size: 1.25em;
+    padding: 0 .25em;
+    color: #6D929B;
+}
+
+.form-add-book-container {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+}
+
+.form-add-book {
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.form-add-new-book {
+    margin: 20px;
+}
+
+.form-add-new-book textarea {
+    width: 100%;
+    border-radius: 10px;
+    height: 100px;
+    border-color: #6D929B;
+    box-shadow: inset;
+    font-size: 1.3em;
+    padding: .5em;
+}
+
+.form-add-new-book textarea:focus {
+    outline: none;
+    border: 1px solid #E8D0A9;
+}
+
+.submit-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+}
+
+.submit-btn input {
+    border: 0;
+    background-color: #E8D0A9;
+    border-radius: 5px;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    border: solid 1px;
+    border-radius: 6px;
+    border-color: #6D929B;
+    font-size: 1em;
+    padding: .5em;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #E8D0A9;
+}
+
+.form-add-new-book-input-select {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.form-add-new-book-input-select label {
+    display: block;
+}
+
+select:focus {
+    outline: none;
+    border: 1px solid #E8D0A9;
+}
+
+.form-page-number input {
+    width: 65px;
+}
+
+.form-book-status select {
+    width: 150px;
+    padding: 10px;
+    border-radius: 10px;
+}
+/*add book form end*/
+
+.main-container {
+    display: grid;
+    grid-template-rows: auto auto;
+    background-color: #F5FAFA;
+    width: 100%;   
+}
+
+@media (max-width: 375px) {
+    .main-text-intro-image-text {
+        display: none;
+    }
+    body{
+        width: 375px;
+    }
+    .main-text-intro {
+        grid-template-columns: auto;
+        grid-template-rows: 60px 130px;
+        grid-template-areas:
+            "title"
+            "text ";
+    }
+    .footer-p {
+        font-size: 12px;        
+    }
+}
+
+@media (max-width: 384px) {
+    .main-text-intro-image-text {
+        display: none;
+    }
+
+    body {
+        width: 384px;
+    }
+    .main-text-intro {
+        
+        grid-template-rows: 60px 120px;
+        
+    }
+    /*.hero-text {
+        font-size: 14px;
+    }
+    
+    .footer-p {
+        font-size: 12px;
+    }*/
+}
+
+    @media (max-width: 484px) {
+        html {
+            font-size: 16px;
+        }
+
+        .main-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto;
+            width: 100%;
+        }
+
+        .main-text-intro-paragraf {
+            grid-area: text;
+            padding-left: 1.2rem;
+            padding-right: 1.2rem;
+        }
+
+        .main-text-intro-image-text {
+            grid-area: image;
+            justify-items: center;
+            padding-right: 2rem;
+            padding-top: 2rem;
+        }
+
+        .main-text-intro-image-form {
+            display: none;
+        }
+
+        .main-text-intro-image-img {
+            border-radius: 5px;
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    @media (min-width: 484px) {
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            width: 900px;
+        }
+
+
+        .main-text-intro {
+            grid-template-columns: auto;
+            grid-template-rows: 60px auto;
+            grid-template-areas:
+                "title"
+                "text ";
+        }
+
+        .form-add-book-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-areas: "book-image book-form";
+        }
+
+        .main-text-intro-paragraf {
+            grid-area: text;
+            padding-left: 1.2rem;
+            padding-right: 1.2rem;
+        }
+
+        .main-text-intro-image-text {
+            display: none;
+        }
+
+        .main-text-intro-image-form {
+            grid-area: book-image;
+            justify-items: center;
+            padding-right: 2rem;
+            padding-left: 2rem;
+            padding-top: 2rem;
+        }
+
+        .main-text-intro-image-img {
+            border-radius: 5px;
+            width: 400px;
+            height: 612px;
+        }
+
+        .form-add-book {
+            grid-area: book-form;
+        }
+    }
+
+@media (min-width: 810px) {
+    html {
+        font-size: 16px;
+    }
+
+    body {
+        width: 810px;
+    }
+
+    footer {
+        width: 810px;
+    }
+}
+
+    @media (min-width: 900px) {
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            width: 1200px;
+        }
+
+        footer {
+            width: 1200px;
+        }
+    }
