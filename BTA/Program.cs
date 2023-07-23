@@ -12,7 +12,8 @@ var connectionString = builder.Configuration.GetConnectionString("BookContextCon
 builder.Services.AddDbContext<BookContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddScoped<IBookRepository, BookRepository>();
+//builder.Services.AddScoped<IBookRepository, BookRepository>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 

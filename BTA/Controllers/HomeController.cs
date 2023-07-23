@@ -9,12 +9,14 @@ namespace BTA.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IBookRepository _bookRepository;
+        //private readonly IBookRepository _bookRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public HomeController(ILogger<HomeController> logger, IBookRepository bookRepository)
+        public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork)
         {
             _logger = logger;
-            _bookRepository = bookRepository;
+            //_bookRepository = bookRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public IActionResult Index()
@@ -37,7 +39,7 @@ namespace BTA.Controllers
                 book.Comment.Substring(0, 198);
             }
 
-            await _bookRepository.AddBook(book);
+            await _unitOfWork.BookRepository.AddBook(book);
 
 
             return RedirectToAction(actionName: "AddNewBook", controllerName: "Home"); ; //TODO send the book title to the view
@@ -49,7 +51,7 @@ namespace BTA.Controllers
             var OwnerId = "2";
             if (OwnerId == null) { return View(); }/*TODO implement error message*/
 
-            var books = await _bookRepository.GetBooks(OwnerId, status);
+            var books = await _unitOfWork.BookRepository.GetBooks(OwnerId, status);
             return View(books);            
         }
 
@@ -87,7 +89,7 @@ namespace BTA.Controllers
 
         public async Task<IActionResult> DeleteBook(int bookId)
         {
-            await _bookRepository.RemoveBook(bookId);
+            await _unitOfWork.BookRepository.RemoveBook(bookId);
 
             return RedirectToAction("Library");
         }
@@ -98,7 +100,7 @@ namespace BTA.Controllers
             var ownerId = "2";
             string status = string.Empty;
 
-            var analitics = await _bookRepository.GetBooks(ownerId, status);
+            var analitics = await _unitOfWork.BookRepository.GetBooks(ownerId, status);
             if (analitics == null)
             {
                 return NotFound();
