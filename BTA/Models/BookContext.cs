@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace BTA.Models
 {
-    public class BookContext : DbContext
+    public class BookContext : IdentityDbContext<DefaultUser>
     {
         public BookContext(DbContextOptions<BookContext> options) : base(options)
         {
